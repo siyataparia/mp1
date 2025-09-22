@@ -4,10 +4,14 @@
  */
 
 // HTML Files
-import './index.html';
+//import './index.html';
 
 // Stylesheets
-import './css/main.scss';
+//import './css/main.scss';
 
 // Scripts
-import './js/main.js';
+//import './js/main.js';
+
+import './src/index.html';
+import './src/css/main.scss';
+import './src/js/main.js';
