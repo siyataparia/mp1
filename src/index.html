@@ -4,10 +4,257 @@
         <meta charset="utf-8" />
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>MP1</title>
+        <title>My Travel Portfolio</title>
+        <!--CSS3 reqs -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+        <!-- scalable vector icons (font awesome)-->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" integrity="sha512-0" crossorigin="anonymous" referrerpolicy="no-referrer">
     </head>
     <body>
-        <h1>Hello World!!!!!! Welcome to MP1!</h1>
-        <img src="assets/image.jpg">
+        <header id="top" class="site-header" role="banner">
+            <nav class="navbar" role="navigation" aria-label="Primary">
+              <a class="brand" href="#home" data-section="home" aria-label="Go to Home">
+                <span class="brand__logo" aria-hidden="true">🌍</span>
+                <span class="brand__text">My Travel Portfolio</span>
+              </a>
+        
+              <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-menu">
+                <span class="nav-toggle__bar" aria-hidden="true"></span>
+                <span class="nav-toggle__bar" aria-hidden="true"></span>
+                <span class="nav-toggle__bar" aria-hidden="true"></span>
+              </button>
+        
+              <ul id="nav-menu" class="nav-menu">
+                <li><a href="#home"         data-section="home"         class="nav-link">Home</a></li>
+                <li><a href="#about"        data-section="about"        class="nav-link">About</a></li>
+                <li><a href="#destinations" data-section="destinations" class="nav-link">Destinations</a></li>
+                <li><a href="#gallery"      data-section="gallery"      class="nav-link">Gallery</a></li>
+                <li><a href="#video"        data-section="video"        class="nav-link">Video</a></li>
+                <li><a href="#contact"      data-section="contact"      class="nav-link">Contact</a></li>
+              </ul>
+        
+              <!-- Position indicator (JS updates width / active state) -->
+              <div class="nav-progress" aria-hidden="true">
+                <div class="nav-progress__bar"></div>
+              </div>
+            </nav>
+          </header>
+
+          <main id="content" class="page-content" role="main">
+            <!--HEADER SECTION-->
+            <section id="home" class="stripe stripe--hero" aria-label="Hero">
+                <div class="container container--center">
+                  <h1 class="hero__title">Exploring the world, one city at a time</h1>
+                  <p class="hero__subtitle">Scroll to discover my favorite trips and photos.</p>
+                  <a class="btn btn--primary" href="#destinations" data-section="destinations">Start the journey</a>
+                </div>
+            </section>
+
+            <!--ABOUT SECTION-->
+            <section id="about" class="stripe stripe--about" aria-label="About Me">
+                <div class="container">
+                  <header class="section-header">
+                    <h2>About Me</h2>
+                    <p>Hi! I love to travel and explore new places, cultures, and foods.</p>
+                  </header>
+          
+                  <div class="columns columns--3">
+                    <article class="card">
+                      <h3>Why I Travel</h3>
+                      <p>Culture, cuisine, and curiosity. I love to immerse myself in new experiences!</p>
+                    </article>
+                    <article class="card">
+                      <h3>Favorite Style</h3>
+                      <p>My favorite kind of trips include a balance of long walks in the city, hiking through nature, and exploring local restaurants and cafes.</p>
+                    </article>
+                    <article class="card">
+                      <h3>Bucket List</h3>
+                      <p>Backpacking through Europe, Japan in the spring, Italy, Antarctica.</p>
+                    </article>
+                  </div>
+                </div>
+              </section>
+
+              <!--DESTINATIONS SECTION (multi-column layoutt)-->
+              <section id="destinations" class="stripe stripe--destinations" aria-label="Destinations">
+                <div class="container">
+                  <header class="section-header">
+                    <h2>Destinations</h2>
+                    <p>Highlights from some of my trips. Click “More” for details (opens a modal).</p>
+                  </header>
+          
+                  <div class="grid grid--destinations">
+                    <article class="destination-card">
+                      <img src="./assets/barcelona.jpg" alt="Top view of city" loading="lazy">
+                      <div class="destination-card__body">
+                        <h3>Barcelona, Spain</h3>
+                        <p>Colorful mosaics at Park Güell, Gothic Quarter alleys, and churros con chocolate to end the day.</p>
+                        <button class="btn btn--ghost modal-open" data-modal="modal-barcelona" aria-haspopup="dialog">More</button>
+                      </div>
+                    </article>
+          
+                    <article class="destination-card">
+                      <img src="./assets/copenhagen.jpg" alt="Colorful houses on the waterfront" loading="lazy">
+                      <div class="destination-card__body">
+                        <h3>Copenhagen, Denmark</h3>
+                        <p>Colorful houses on Nyhavn, canal cruises, and cozy cafes on every corner.</p>
+                        <button class="btn btn--ghost modal-open" data-modal="modal-copenhagen" aria-haspopup="dialog">More</button>
+                      </div>
+                    </article>
+          
+                    <article class="destination-card">
+                      <img src="./assets/cambodia.jpg" alt="Angkor wat" loading="lazy">
+                      <div class="destination-card__body">
+                        <h3>Siem Reap, Cambodia</h3>
+                        <p>Sunrise at Angkor Wat, floating villages on Tonlé Sap, and night markets on Pub Street.</p>
+                        <button class="btn btn--ghost modal-open" data-modal="modal-cambodia" aria-haspopup="dialog">More</button>
+                      </div>
+                    </article>
+                  </div>
+                </div>
+              </section>
+
+              <!--fixed background image-->
+              <section class="stripe stripe--parallax" aria-label="Scenic Break">
+                <div class="parallax__overlay"></div>
+              </section>
+
+              <!--CAROUSEL SECTION-->
+              <section id="gallery" class="stripe stripe--gallery" aria-label="Photo Gallery">
+                <div class="container">
+                  <header class="section-header">
+                    <h2>Photo Gallery</h2>
+                    <p>Use the arrows to explore the slideshow.</p>
+                  </header>
+          
+                  <div class="carousel" role="region" aria-roledescription="carousel" aria-label="Travel photos">
+                    <button class="carousel__control carousel__control--prev" aria-label="Previous slide">
+                      <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+                    </button>
+          
+                    <div class="carousel__track">
+                      <div class="carousel__slide is-active" id="slide-1" aria-label="Slide 1 of 3">
+                        <img src="./assets/carousel1.jpg" alt="Streets with yellow buildings">
+                      </div>
+                      <div class="carousel__slide" id="slide-2" aria-label="Slide 2 of 3">
+                        <img src="./assets/carousel2.jpg" alt="Stream running through foggy mountains" loading="lazy">
+                      </div>
+                      <div class="carousel__slide" id="slide-3" aria-label="Slide 3 of 3">
+                        <img src="./assets/carousel3.jpg" alt="Flower garden in front of mountains" loading="lazy">
+                      </div>
+                    </div>
+          
+                    <button class="carousel__control carousel__control--next" aria-label="Next slide">
+                      <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                    </button>
+          
+                    <div class="carousel__dots" role="tablist" aria-label="Choose slide">
+                      <button class="carousel__dot is-active" role="tab" aria-selected="true" aria-controls="slide-1"></button>
+                      <button class="carousel__dot" role="tab" aria-selected="false" aria-controls="slide-2"></button>
+                      <button class="carousel__dot" role="tab" aria-selected="false" aria-controls="slide-3"></button>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <!--VIDEO SECTION-->
+              <section id="video" class="stripe stripe--video" aria-label="Travel Video">
+                <div class="container container--center">
+                  <header class="section-header">
+                    <h2>Featured Video</h2>
+                    <p>A top view of Gibraltar.</p>
+                  </header>
+          
+                  <video class="travel-video" controls preload="metadata" width="960" height="540" poster="./assets/image.jpg">
+                    <source src="./assets/mp1video.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
+              </section>
+
+              <!--CONTACT SECTION-->
+              <section id="contact" class="stripe stripe--contact" aria-label="Contact">
+                <div class="container container--center">
+                  <header class="section-header">
+                    <h2>Contact</h2>
+                    <p>Let's connect!</p>
+                  </header>
+          
+                  <div class="socials" aria-label="Social media links">
+                    <a class="socials__link" href="#" aria-label="Instagram">
+                      <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+                    </a>
+                    <a class="socials__link" href="#" aria-label="TikTok">
+                      <i class="fa-brands fa-tiktok" aria-hidden="true"></i>
+                    </a>
+                    <a class="socials__link" href="#" aria-label="YouTube">
+                      <i class="fa-brands fa-youtube" aria-hidden="true"></i>
+                    </a>
+                    <a class="socials__link" href="mailto:siyataparia@gmail.com" aria-label="Email">
+                      <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                    </a>
+                  </div>
+                </div>
+              </section>
+        </main>
+
+        <!--FOOTER SECTION-->
+        <footer class="site-footer" role="contentinfo">
+            <div class="container container--center">
+              <p>&copy; <span id="year"></span> My Travel Portfolio</p>
+            </div>
+          </footer>
+        
+        <!--modals-->
+        <!-- ===================== MODALS ===================== -->
+        <div id="modal-barcelona" class="modal" role="dialog"
+        aria-modal="true" aria-labelledby="modal-barcelona-title" aria-describedby="modal-barcelona-desc"
+        aria-hidden="true">
+        <div class="modal__backdrop" data-close="modal"></div>
+        <div class="modal__dialog" role="document">
+        <button class="modal__close" aria-label="Close dialog" data-close="modal">
+        <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+        </button>
+        <h3 id="modal-barcelona-title">Barcelona, Spain</h3>
+        <p id="modal-barcelona-desc">
+        Gaudí’s curves at Sagrada Família and Casa Batlló, mosaic views from Park Güell,
+        and evening tapas runs through El Born. Don’t miss Barceloneta for golden-hour walks.
+        </p>
+        </div>
+        </div>
+
+        <div id="modal-copenhagen" class="modal" role="dialog"
+        aria-modal="true" aria-labelledby="modal-copenhagen-title" aria-describedby="modal-copenhagen-desc"
+        aria-hidden="true">
+        <div class="modal__backdrop" data-close="modal"></div>
+        <div class="modal__dialog" role="document">
+        <button class="modal__close" aria-label="Close dialog" data-close="modal">
+        <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+        </button>
+        <h3 id="modal-copenhagen-title">Copenhagen, Denmark</h3>
+        <p id="modal-copenhagen-desc">
+        Bikes along Nyhavn’s colorful canal, smørrebrød at Torvehallerne, and Tivoli lights after dark.
+        Swing by Amalienborg for the guards and climb the Round Tower at sunset.
+        </p>
+        </div>
+        </div>
+
+        <div id="modal-cambodia" class="modal" role="dialog"
+        aria-modal="true" aria-labelledby="modal-cambodia-title" aria-describedby="modal-cambodia-desc"
+        aria-hidden="true">
+        <div class="modal__backdrop" data-close="modal"></div>
+        <div class="modal__dialog" role="document">
+        <button class="modal__close" aria-label="Close dialog" data-close="modal">
+        <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+        </button>
+        <h3 id="modal-cambodia-title">Siem Reap, Cambodia</h3>
+        <p id="modal-cambodia-desc">
+        Sunrise at Angkor Wat, Bayon’s serene stone faces, and tree roots weaving through Ta Prohm.
+        Wind down with night market snacks and live music along Pub Street.
+        </p>
+        </div>
+        </div>
     </body>
 </html>
