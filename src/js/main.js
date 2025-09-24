@@ -1,18 +1,16 @@
 /* Your JS here. */
 //console.log('Hello World!')
-// ===================== Utilities =====================
 const $ = (sel, root = document) => root.querySelector(sel);
 const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
 
-// Compute current navbar height (it changes when shrinking)
+// current navbar height
 const nav = $('.navbar');
 const getNavH = () => nav?.getBoundingClientRect().height || 0;
 
-// ===================== 0) Misc: Year =====================
 const yearEl = $('#year');
 if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-// ===================== 1) Smooth Scrolling (with offset) =====================
+// smooth scrolling
 function smoothScrollTo(targetId) {
   const el = document.getElementById(targetId);
   if (!el) return;
@@ -38,14 +36,14 @@ $$('[data-section], .nav-link, .brand').forEach(a => {
   });
 });
 
-// ===================== 2) Navbar shrink on scroll =====================
+// navbar shrink on scroll 
 function onScrollShrink() {
   if (!nav) return;
   if (window.scrollY > 8) nav.classList.add('navbar--shrink');
   else nav.classList.remove('navbar--shrink');
 }
 
-// ===================== 3) Progress bar + Active nav (scroll spy) =====================
+// progress bar 
 const progressBar = $('.nav-progress__bar');
 const sections = $$('#content > section'); // all top-level sections in main
 const navLinks = $$('.nav-link');
@@ -72,7 +70,7 @@ function updateActiveNav() {
     return;
   }
 
-  // Find section directly under the bottom of navbar
+  // find section directly under the bottom of navbar
   let currentId = sections[0]?.id;
   for (const sec of sections) {
     const top = sec.offsetTop - navH - 1;
@@ -89,7 +87,7 @@ function updateActiveNav() {
   });
 }
 
-// ===================== 4) Mobile nav toggle =====================
+// mobile nav toggle
 const navToggle = $('.nav-toggle');
 const navMenu = $('#nav-menu');
 if (navToggle && navMenu) {
@@ -99,7 +97,7 @@ if (navToggle && navMenu) {
   });
 }
 
-// ===================== 5) Carousel =====================
+// carousel 
 (function initCarousel() {
   const track = $('.carousel__track');
   if (!track) return;
